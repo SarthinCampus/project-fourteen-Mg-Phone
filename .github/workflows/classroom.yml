@@ -49,11 +49,11 @@ jobs:
         comparison-method: regex
         timeout: 10
         max-score: 2
-    - name: inputting "apple,banana,apple,mango,banana" test
-      id: inputting-apple-banana-apple-mango-banana-test
+    - name: inputting "apple,banana,apple,mango,banana" test (no space)
+      id: inputting-apple-banana-apple-mango-banana-test-no-space
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: inputting "apple,banana,apple,mango,banana" test
+        test-name: inputting "apple,banana,apple,mango,banana" test (no space)
         setup-command: ''
         command: python3 remove_duplicates/main.py
         input: apple,banana,apple,mango,banana
@@ -67,5 +67,6 @@ jobs:
         INPUTTING-APPLE-BANANA-APPLE-MANGO-BANANA-TEST_RESULTS: "${{steps.inputting-apple-banana-apple-mango-banana-test.outputs.result}}"
         INPUTTING-ONE-TWO-THREE-TEST_RESULTS: "${{steps.inputting-one-two-three-test.outputs.result}}"
         INPUTTING-X-X-X-X-TEST_RESULTS: "${{steps.inputting-x-x-x-x-test.outputs.result}}"
+        INPUTTING-APPLE-BANANA-APPLE-MANGO-BANANA-TEST-NO-SPACE_RESULTS: "${{steps.inputting-apple-banana-apple-mango-banana-test-no-space.outputs.result}}"
       with:
-        runners: inputting-apple-banana-apple-mango-banana-test,inputting-one-two-three-test,inputting-x-x-x-x-test,inputting-apple-banana-apple-mango-banana-test
+        runners: inputting-apple-banana-apple-mango-banana-test,inputting-one-two-three-test,inputting-x-x-x-x-test,inputting-apple-banana-apple-mango-banana-test-no-space
