@@ -2,7 +2,6 @@ items = input().split(',')
 
 seen = set()
 unique_items = []
-
 for item in items:
     item = item.strip()
     if item not in seen:
